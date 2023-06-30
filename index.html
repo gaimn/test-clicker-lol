@@ -4,9 +4,34 @@
     <title>factory clicker</title>
   </head>
   <body>
-    You have <div id="drones">1</div> drones
+    You have <div id="drones">1</div> drones and also <div id="chip">0</div> chips
+    You have <div id="res1">0</div> metal, you need 10 to build a T1 drone
+    <button onclick="run()">Mine</button> some metal
+    <button onclick="chip()">Produce</button> 1 chip for 3 metal
+    <button onclick="buy1()">Construct</button> a T1 for 10 metal and 1 chip
     <script>
-      drones = 1
+      droneT1 = 1
+      metal = 1
+      chip = 0
+      function run() {
+        metal = metal + drones
+      }
+      function buy1() {
+        if (metal > 9 && chip > 0) {
+          metal = metal - 10
+          chip = chip - 1
+          droneT1 = droneT1 + 1
+        }
+      }
+      function chip() {
+        if (metal > 2) {
+          metal = metal - 3
+          chip = chip + 1
+        }
+      }
+      document.getElementById("drones").innerHTML = droneT1
+      document.getElementById("res1").innerHTML = metal
+      document.getElementById("chip").innerHTML = chip
     </script>
   </body>
 </html>
