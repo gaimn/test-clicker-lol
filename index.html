@@ -15,23 +15,26 @@
       chip = 0
       function run() {
         metal = metal + drones
+        document.getElementById("res1").innerHTML = metal
       }
       function buy1() {
         if (metal > 9 && chip > 0) {
           metal = metal - 10
           chip = chip - 1
           droneT1 = droneT1 + 1
+          document.getElementById("drones").innerHTML = droneT1
+          document.getElementById("res1").innerHTML = metal
+          document.getElementById("chip").innerHTML = chip
         }
       }
       function chip() {
         if (metal > 2) {
           metal = metal - 3
           chip = chip + 1
+          document.getElementById("res1").innerHTML = metal
+          document.getElementById("chip").innerHTML = chip
         }
       }
-      document.getElementById("drones").innerHTML = droneT1
-      document.getElementById("res1").innerHTML = metal
-      document.getElementById("chip").innerHTML = chip
     </script>
   </body>
 </html>
